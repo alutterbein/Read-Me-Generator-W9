@@ -26,4 +26,4 @@ extensive
 alutterbein@gmail.com github.com/alutterbein
 
 https://github.com/alutterbein/Read-Me-Generator-W9
-![](/media/week_9_demo.mp4)
+<video src="/media/week_9_demo.mp4" width="320" height="240"> </video>
