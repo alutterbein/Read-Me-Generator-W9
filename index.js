@@ -22,11 +22,6 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Create a table of contents for your readme',
-        name: 'ToC'
-    },
-    {
-        type: 'input',
         message: 'Give instalation instructions for your project',
         name: 'Installation'
     },
@@ -53,7 +48,7 @@ const questions = [
       },
     {
         type: 'input',
-        message: 'Enter your email and github profile for contact with quetions',
+        message: 'Enter your email and github profile for contact with questions',
         name: 'Questions'
     },
 
@@ -61,14 +56,14 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    return fs.writeFileSync(fileName, generateMarkdown(data))
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 
 }
 // TODO: Create a function to initialize app
 function init() {
-    inquerer
+    inquirer
     .prompt(questions)
-    .then(answers =>{writeToFile('writeToFile'(Readme.md))})
+    .then(answers =>{writeToFile("./testrmdump/Readme.md", generateMarkdown ({ ...answers }))})
 }
 
 // Function call to initialize app
